@@ -1437,7 +1437,7 @@ void CF_CFDP_TickTransactions(CF_Channel_t *chan)
                 break;
         }
 
-        if (targs.fn != NULL)
+        if (targs.fn != NULL && q_id >= 0)
         {
             CF_CList_Traverse(chan->qs[q_id], CF_CFDP_DoTick, &targs);
         }
