@@ -25,6 +25,8 @@
 #include "cfe_tbl_filedef.h"
 #include "cf_tbldefs.h"
 
+#include "cf_msgids.h"
+
 CF_ConfigTable_t CF_config_table = {
     10,    /* ticks_per_second */
     16384, /* max number of bytes per wakeup to calculate r2 recv file CRC */
@@ -39,8 +41,8 @@ CF_ConfigTable_t CF_config_table = {
          30,     /* inactivity timer */
          4,      /* ACK limit */
          4,      /* NAK limit */
-         0x18c8, /* input message id */
-         0x08c2, /* output message id */
+         CF_CH0_RX_MID, /* input message id */
+         CF_CH0_TX_MID, /* output message id */
          16,     /* input pipe depth */
          {       /* polling directory configuration for CF_MAX_POLLING_DIR_PER_CHAN */
           {
@@ -68,8 +70,8 @@ CF_ConfigTable_t CF_config_table = {
       30,     /* inactivity timer */
       4,      /* ack limit */
       4,      /* nak limit */
-      0x18c9, /* input message id */
-      0x08c3, /* output message id */
+      CF_CH1_RX_MID, /* input message id */
+      CF_CH1_TX_MID, /* output message id */
       16,     /* input pipe depth */
       {       /* polling directory configuration for CF_MAX_POOLING_DIR_PER_CHAN */
        {
